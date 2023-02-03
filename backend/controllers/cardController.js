@@ -3,7 +3,7 @@ const Card = require('../models/cardModel');
 
 // GET all cards
 const getAllCards = async (req, res) => {
-    const cards = await Card.find({}).sort({ opened: -1 });
+    const cards = await Card.find({}).sort({ "opened.year": -1, "opened.month": -1 });
     res.status(200).json(cards);
 }
 

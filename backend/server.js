@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.use('/api/card/', cardRoutes);
+app.use('/api/cards/', cardRoutes);
 
 // mongodb
 mongoose.connect(process.env.MONGOOSE_MRI)
