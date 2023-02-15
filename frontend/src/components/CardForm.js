@@ -25,7 +25,7 @@ const CardForm = ({refetch}) => {
                 throw new Error("Invalid Date");
             }
 
-            await axios.post('/api/cards/', {
+            await axios.post('https://churn-velocity-api.onrender.com/api/cards/', {
                 name: name,
                 opened: {
                     month: date[1],

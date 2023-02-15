@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const CardDetails = ({card, refetch}) => {
     const handleClick = async () => {
-        await axios.delete('/api/cards/' + card._id);
+        await axios.delete('https://churn-velocity-api.onrender.com/api/cards/' + card._id);
         refetch();
     }
 
