@@ -2,7 +2,15 @@
 import CardDetails from '../components/CardDetails';
 import CardForm from '../components/CardForm';
 
-const Home = ({cards, refetch}) => {
+const Home = ({cards, refetch, isLoading }) => {
+    if(isLoading) {
+        return (
+            <div className='loading'>
+                <h1>Cards Loading (This may take up to a minute)</h1>
+            </div>
+        );
+    }
+
     return (
         <div className='home'>
             <div className='cards'>

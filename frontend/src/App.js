@@ -15,16 +15,10 @@ function App() {
         }
     });
 
-    if(isLoading || isFetching) {
-        return (
-            <h1>Cards Loading</h1>
-        );
-    }
-
     return (
         <div className='App'>
             <Nav cards={cards} />
-            <Home cards={cards} refetch={refetch} />
+            <Home cards={cards} refetch={refetch} isLoading={isLoading} />
         </div>
     );
 }

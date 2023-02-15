@@ -31,6 +31,10 @@ div.cardStats h2 {
   font-size: 1em;
 }
 
+div.loading {
+  margin: 25px 150px;
+}
+
 div.home {
   margin: 25px 150px;
   display: grid;
