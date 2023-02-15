@@ -1,22 +1,17 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+const queryClient = new QueryClient();
 
-// pages & components
+// pages
 import Home from './pages/Home';
-import Navbar from './components/Navbar';
 
 function App() {
-  return (
-    <div className='App'>
-      <BrowserRouter>
-        <Navbar />
-        <div className='pages'>
-          <Routes>
-            <Route path='/' element={ <Home /> } />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </div>
-  );
+    return (
+        <QueryClientProvider client={queryClient}>
+            <div className='App'>
+                <Home />
+            </div>
+        </QueryClientProvider>
+    );
 }
 
 export default App;

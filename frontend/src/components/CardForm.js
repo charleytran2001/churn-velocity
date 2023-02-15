@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import axios from 'axios';
 
-const CardForm = () => {
+const CardForm = ({refetch}) => {
     const [name, setName] = useState('');
     const [openDate, setOpenDate] = useState('');
 
@@ -20,6 +20,8 @@ const CardForm = () => {
 
             setName('');
             setOpenDate('');
+
+            refetch();
         } catch(error) {
             console.log(error);
         }

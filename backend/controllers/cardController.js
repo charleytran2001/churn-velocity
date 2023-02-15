@@ -79,11 +79,22 @@ const deleteCard = async (req, res) => {
     }
 }
 
+// DELETE ALL (DEV)
+const deleteAll = async (req, res) => {
+    try {
+        const card = await Card.deleteMany({});
+        res.status(200).json(card);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+}
+
 // export functions
 module.exports = {
     getAllCards,
     getOneCard,
     postCard,
     patchCard,
-    deleteCard
+    deleteCard,
+    deleteAll
 }

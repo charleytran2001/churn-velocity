@@ -1,37 +1,38 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 import axios from 'axios';
 
 // components
+import Navbar from '../components/Navbar';
 import CardDetails from '../components/CardDetails';
 import CardForm from '../components/CardForm';
 
 const Home = () => {
-    const [cards, setCards] = useState(null);
-
-    useEffect(() => {
-        const fetchCards = async () => {
-            try {
-                const response = await axios.get('/api/cards/');
-                setCards(response.data);
-            } catch(error) {
-                console.log(error);
-            }
+    const { data: cards, refetch } = useQuery('cards', async () => {
+        try {
+            const { data } = await axios.get('/api/cards/');
+            return data;
+        } catch (error) {
+            console.log(error);
         }
-
-        fetchCards();
-    }, []);
+    });
 
     return (
-        <div className='home'>
-            <div className='cards'>
-                <h2>Your Cards</h2>
-                { cards && cards.map(card => (
-                    <CardDetails key={card._id} card={card} />
-                ))}
+        <div className='wrapper'>
+            <Navbar cards={cards} />
+
+            <div className='home'>
+                <div className='cards'>
+                    <h2>Your Cards</h2>
+                    {cards && cards.map(card => (
+                        <CardDetails key={card._id} card={card} />
+                    ))}
+                </div>
+
+                <div className='form'>
+                    <CardForm refetch={refetch} />
+                </div>
             </div>
-            <div className='form'>
-                <CardForm />
-            </div>
+
         </div>
     );
 }

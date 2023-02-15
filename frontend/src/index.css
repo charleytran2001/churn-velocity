@@ -5,38 +5,45 @@
 }
 
 body {
-  background-color: #f7f7f7;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f7f7f7;
 }
 
 div.home {
-  padding: 25px 50px;
-}
-
-header nav {
-  display: flex;
-  background-color: black;
-  padding: 25px 50px;
-}
-
-header nav a {
-  color: white;
-  font-size: larger;
-  text-decoration: none;
-}
-
-div.home {
+  margin: 25px 150px;
   display: grid;
   grid-template-columns: 2.5fr 1.5fr;
-  gap: 25px;
+  gap: 150px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 25px 50px;
+}
+
+nav h1 {
+  font-size: 1.75em;
+}
+
+div.cardStats {
+  display: flex;
+  gap: 50px;
+}
+
+div.cardStats h2 {
+  font-size: 1em;
 }
 
 div.cardDetails {
   display: block;
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
   background-color: white;
-  margin: 5px 0;
+  margin: 10px 0;
   padding: 20px;
 }
 
