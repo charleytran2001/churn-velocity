@@ -24,7 +24,7 @@ const Home = () => {
                 <div className='cards'>
                     <h2>Your Cards</h2>
                     {cards && cards.map(card => (
-                        <CardDetails key={card._id} card={card} />
+                        <CardDetails key={card._id} card={card} refetch={refetch} />
                     ))}
                 </div>
 

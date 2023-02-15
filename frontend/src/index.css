@@ -9,20 +9,13 @@ body {
   background-color: #f7f7f7;
 }
 
-div.home {
-  margin: 25px 150px;
-  display: grid;
-  grid-template-columns: 2.5fr 1.5fr;
-  gap: 150px;
-}
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: black;
   color: white;
-  padding: 25px 50px;
+  padding: 35px 150px;
 }
 
 nav h1 {
@@ -38,17 +31,57 @@ div.cardStats h2 {
   font-size: 1em;
 }
 
+div.home {
+  margin: 25px 150px;
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr;
+  gap: 100px;
+}
+
+div.home h2 {
+  font-size: 1.25em;
+  margin-bottom: 25px;
+}
+
 div.cardDetails {
   display: block;
-  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  /* box-shadow: 1px 1px rgba(0, 0, 0, 0.3); */
   border-radius: 5px;
   background-color: white;
   margin: 10px 0;
   padding: 20px;
+  border: 0.5px solid #ddd;
+}
+
+.cardDetails span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 5px;
 }
 
 form.cardForm label, form.cardForm input {
   display: block;
-  block-size: border;
   margin: 10px 0;
+}
+
+form.cardForm input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form.cardForm button {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }

@@ -27,12 +27,12 @@ const Navbar = ({cards}) => {
             </nav>
 
             <div className='cardStats'>
-                <h2>Number of Cards: {cards && cards.length}</h2>
-                <h2>Months Since Last Card: {differenceInCalendarMonths(
+                <h2>Total Cards: {cards && cards.length}</h2>
+                <h2>Last Card: {differenceInCalendarMonths(
                     new Date(currentDate[0], currentDate[1]),
                     new Date(newestCardDate[0], newestCardDate[1])
-                )}</h2>
-                <h2>New Accounts Opened: {calculateCardMonthStats(6)}/6, {calculateCardMonthStats(12)}/12, {calculateCardMonthStats(24)}/24</h2>
+                )} Months Ago</h2>
+                <h2>New Accounts: {calculateCardMonthStats(6)}/6, {calculateCardMonthStats(12)}/12, {calculateCardMonthStats(24)}/24</h2>
             </div>
         </header>
     );
